@@ -556,6 +556,8 @@ footer .social-lincs .icon {
   letter-spacing: 0.03em;
   color: var(--bg-color-main);
   background-color: transparent;
+
+  transition: border-color var(--transition-main-delay) var(--transition-main-function);
 }
 .subscribe-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
@@ -608,7 +610,7 @@ footer .social-lincs .icon {
   top: 50%;
   left: 50%;
   width: 528px;
-  padding: 8px 8px 40px;
+  padding: 40px;
   border-radius: 4px;
 
   background-color: #ffffff;
@@ -628,7 +630,9 @@ footer .social-lincs .icon {
   transform: translate(-50%, 100%) scale(0.7);
 }
 .modal-close {
-  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
   margin-left: auto;
   padding: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -644,14 +648,11 @@ footer .social-lincs .icon {
 .modal-close:hover {
   fill: var(--bg-color-accent);
 }
-.callback {
-  max-width: 448px;
-  margin: 0 auto;
-}
 .callback-title {
   margin-bottom: 12px;
 
   font-size: 20px;
+  font-weight: 700;
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
@@ -667,6 +668,8 @@ footer .social-lincs .icon {
   position: absolute;
   top: 50%;
   left: 12px;
+
+  transition: fill var(--transition-main-delay) var(--transition-main-function);
 }
 .callback-input input:focus + .callback-input-icon {
   fill: var(--bg-color-accent);
@@ -680,7 +683,6 @@ footer .social-lincs .icon {
 .callback-input label,
 .callback-input--comment label,
 .callback-input--comment textarea::placeholder {
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
@@ -699,33 +701,39 @@ footer .social-lincs .icon {
 .callback-input--comment textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color var(--transition-main-delay) var(--transition-main-function);
 }
 .callback-input--comment textarea {
   height: 120px;
+  resize: none;
 }
 .callback-input input:focus,
 .callback-input--comment textarea:focus {
   outline: none;
   border-color: var(--bg-color-accent);
+
 }
 .callback-input--comment textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 .callback-agreemant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 30px;
+
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: var(--color-main);
 }
-.callback-agreemant,
 .callback-submit {
   display: block;
   margin: 0 auto;
 
   text-align: center;
-}
-.callback-agreemant {
-  margin-bottom: 30px;
 }
 .callback-agreemant input {
   -moz-appearance: none;
@@ -765,7 +773,9 @@ footer .social-lincs .icon {
   background: var(--bg-color-accent);
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--transition-main-delay) var(--transition-main-function);
 }
-.callback-submit:hover {
+.callback-submit:hover,
+.callback-submit:focus {
   background-color: var(--bg-button-hover);
 }
